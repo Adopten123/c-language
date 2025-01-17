@@ -1,0 +1,10 @@
+^P:\PROGRAMMING\C-LANGUAGE\FILE_MANAGER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SP:/Programming/c-language/file_manager -BP:/Programming/c-language/file_manager/build --check-stamp-file P:/Programming/c-language/file_manager/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

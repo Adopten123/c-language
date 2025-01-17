@@ -1,0 +1,3 @@
+P:/Programming/c-language/file_manager/build/CMakeFiles/c_language.dir
+P:/Programming/c-language/file_manager/build/CMakeFiles/ALL_BUILD.dir
+P:/Programming/c-language/file_manager/build/CMakeFiles/ZERO_CHECK.dir
