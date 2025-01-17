@@ -19,10 +19,11 @@ void copy_file(const char *source, const char *destination) {
     }
 
     char buffer[BUFFER_SIZE];
-    size_t bytesRead;
-    while ((bytesRead = fread(buffer, 1, BUFFER_SIZE, src)) > 0) {
-        fwrite(buffer, 1, bytesRead, dest);
-    }
+	while (fgets(buffer, BUFFER_SIZE, src) != NULL) {
+    	fputs(buffer, dest);
+	}
+	fputs("\n", dest);
+
 
     fclose(src);
     fclose(dest);
@@ -48,7 +49,7 @@ void print_file_content(const char *filename) {
 
     char buffer[BUFFER_SIZE];
     while (fgets(buffer, BUFFER_SIZE, file) != NULL) {
-        printf("%s\n", buffer);
+        printf("%s", buffer);
     }
 
     fclose(file);
