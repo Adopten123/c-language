@@ -1,0 +1,3 @@
+P:/Programming/c-language/cmake-build-debug/CMakeFiles/c_language.dir
+P:/Programming/c-language/cmake-build-debug/CMakeFiles/edit_cache.dir
+P:/Programming/c-language/cmake-build-debug/CMakeFiles/rebuild_cache.dir
