@@ -4,12 +4,16 @@
 
 #define BUFFER_SIZE 1024
 
+void error(FILE *file) {
+    if (file == NULL) {
+      perror("Error opening source file");
+      exit(EXIT_FAILURE);
+    }
+}
+
 void copy_file(const char *source, const char *destination) {
     FILE *src = fopen(source, "r");
-    if (src == NULL) {
-        perror("Error opening source file");
-        exit(EXIT_FAILURE);
-    }
+    error(src);
 
     FILE *dest = fopen(destination, "w");
     if (dest == NULL) {
@@ -31,10 +35,7 @@ void copy_file(const char *source, const char *destination) {
 
 void append_to_file(const char *filename, const char *text) {
     FILE *file = fopen(filename, "a");
-    if (file == NULL) {
-        perror("Error opening file for appending text");
-        exit(EXIT_FAILURE);
-    }
+    error(file);
 
     fprintf(file, "%s\n", text);
     fclose(file);
@@ -42,10 +43,7 @@ void append_to_file(const char *filename, const char *text) {
 
 void print_file_content(const char *filename) {
     FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        perror("Error opening file for reading");
-        exit(EXIT_FAILURE);
-    }
+    error(file);
 
     char buffer[BUFFER_SIZE];
     while (fgets(buffer, BUFFER_SIZE, file) != NULL) {
